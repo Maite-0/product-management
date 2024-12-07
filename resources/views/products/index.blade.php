@@ -240,6 +240,7 @@
             <h2 class="text-xl font-semibold mb-4 sticky top-0 bg-white p-4 z-10 shadow-md">View or Edit Product</h2>
 
             <!-- Edit product details form -->
+            @if (isset($product))
             <form id="edit-product-form" action="{{ route('products.update', $product->id) }}" method="POST">
                 @csrf
                 @method('PUT')
@@ -317,8 +318,7 @@
                         class="py-2 px-4 bg-red-500 text-white rounded-lg hover:bg-red-400 cancel-edit-btn">Cancel</button>
                 </div>
             </form>
+            @endif
         </div>
     </div>
-
-
 </x-layout>
